@@ -1,0 +1,22 @@
+{
+  "name": "source-map-path-normalizer",
+  "version": "0.0.1",
+  "description": "Works on Windows too!",
+  "keywords": [
+    "flux",
+    "store"
+  ],
+  "homepage": "https://github.com/fatfisz/source-map-path-normalizer",
+  "repository": "https://github.com/fatfisz/source-map-path-normalizer.git",
+  "author": {
+    "name": "FatFisz",
+    "url": "https://github.com/fatfisz"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "convert-source-map": "^0.5.0"
+  }
+}
