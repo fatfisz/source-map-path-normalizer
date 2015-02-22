@@ -3,9 +3,17 @@
 var path = require('path');
 
 var convertSourceMap = require('convert-source-map');
+var assign = require('object-assign');
 
+
+var defaults = {
+  root: process.cwd(),
+  sourceRoot: '/'
+};
 
 module.exports = function (src, options) {
+  options = assign({}, defaults, options);
+
   var srcString = src.toString(); // src could be a buffer
 
   var sourceMap = convertSourceMap.fromSource(srcString);
@@ -18,7 +26,7 @@ module.exports = function (src, options) {
     })
   );
 
-  sourceMap.setProperty('sourceRoot', options.sourceRoot || '/');
+  sourceMap.setProperty('sourceRoot', options.sourceRoot);
 
   return convertSourceMap.removeComments(srcString) + // Remove old source map
          sourceMap.toComment(); // Add the new one
